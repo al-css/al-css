@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +18,11 @@
     --mono: 'Space Mono', monospace;
     --sans: 'Syne', sans-serif;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background: var(--bg);
     color: var(--text);
@@ -31,7 +30,7 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-
+ 
   /* Grid overlay */
   body::before {
     content: '';
@@ -44,7 +43,7 @@
     pointer-events: none;
     z-index: 0;
   }
-
+ 
   /* NAV */
   nav {
     position: fixed;
@@ -80,7 +79,7 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--accent); }
-
+ 
   /* HERO */
   .hero {
     position: relative;
@@ -150,7 +149,7 @@
     background: rgba(255,255,255,0.02);
   }
   .badge.hi { border-color: var(--accent); color: var(--accent); }
-
+ 
   .hero-scan {
     position: absolute;
     right: 5%;
@@ -168,7 +167,7 @@
   .hero-scan div {
     background: var(--surface);
   }
-
+ 
   /* SECTIONS */
   section {
     position: relative;
@@ -177,7 +176,7 @@
     max-width: 1100px;
     margin: 0 auto;
   }
-
+ 
   .section-label {
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -195,14 +194,14 @@
     height: 1px;
     background: var(--border);
   }
-
+ 
   h2 {
     font-size: clamp(1.75rem, 4vw, 3rem);
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 3rem;
   }
-
+ 
   /* PROJECT CARDS */
   .projects-grid {
     display: grid;
@@ -211,7 +210,7 @@
     background: var(--border);
     border: 1px solid var(--border);
   }
-
+ 
   .card {
     background: var(--surface);
     padding: 2rem;
@@ -233,7 +232,7 @@
   }
   .card:hover::after { height: 100%; }
   .card:hover { background: #13161e; }
-
+ 
   .card-category {
     font-family: var(--mono);
     font-size: 0.6rem;
@@ -249,7 +248,7 @@
   .card-category.ir  { border-color: var(--accent2); color: var(--accent2); }
   .card-category.cps { border-color: var(--accent3); color: var(--accent3); }
   .card-category.lab { border-color: #fb923c;          color: #fb923c;         }
-
+ 
   .card h3 {
     font-size: 1.05rem;
     font-weight: 600;
@@ -288,7 +287,7 @@
     transition: gap 0.2s;
   }
   .card-link:hover { gap: 0.75rem; }
-
+ 
   /* ABOUT */
   .about-grid {
     display: grid;
@@ -303,7 +302,7 @@
     margin-bottom: 1.25rem;
   }
   .about-text p strong { color: var(--text); }
-
+ 
   .tools-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -327,7 +326,7 @@
     color: var(--accent);
     font-size: 0.85rem;
   }
-
+ 
   /* STATS */
   .stats-bar {
     display: grid;
@@ -357,7 +356,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-
+ 
   /* FOOTER */
   footer {
     position: relative;
@@ -389,7 +388,7 @@
     transition: color 0.2s;
   }
   .footer-links a:hover { color: var(--accent); }
-
+ 
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -403,7 +402,7 @@
   .hero-inner > *:nth-child(3) { animation-delay: 0.3s; }
   .hero-inner > *:nth-child(4) { animation-delay: 0.4s; }
   .hero-inner > *:nth-child(5) { animation-delay: 0.5s; }
-
+ 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
@@ -417,7 +416,7 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="nav-logo">AAL // Portfolio</div>
   <ul class="nav-links">
@@ -426,7 +425,7 @@
     <li><a href="https://github.com/al-css/al-css" target="_blank">GitHub ↗</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
@@ -457,7 +456,7 @@
     <div></div><div></div><div></div><div></div>
   </div>
 </div>
-
+ 
 <!-- STATS -->
 <div style="position:relative;z-index:1;padding:0 2.5rem;max-width:1100px;margin:0 auto;">
   <div class="stats-bar">
@@ -467,14 +466,14 @@
     <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Frameworks Applied</span></div>
   </div>
 </div>
-
+ 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">Academic Work</div>
   <h2>Projects & Reports</h2>
-
+ 
   <div class="projects-grid">
-
+ 
     <!-- TI -->
     <div class="card">
       <span class="card-category ti">Threat Intelligence</span>
@@ -482,20 +481,20 @@
       <p>Comparative analysis of APT1, APT38, and APT41 using the Cyber Kill Chain and MITRE ATT&CK framework. Mapped TTPs across all kill chain phases and produced ATT&CK Navigator visualizations to guide threat hunting and IR recommendations.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 454 · Intrusion Testing</span>
-        <a class="card-link" href="assets/reports/apt-threat-intelligence-mitre-attack-report__FULL_.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/apt-threat-intelligence-mitre-attack-report%20%28FULL%29.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <div class="card">
       <span class="card-category ti">Threat Intelligence</span>
       <h3>Operation Pacifier — Forensics, Law & Anonymity Networks</h3>
       <p>Analysis of the FBI's Playpen takedown and the Network Investigative Technique (NIT) deployment. Covers the Firefox/Tor vulnerability exploited, Rule 41 jurisdiction issues, evidence admissibility under the "good faith" exception, and the long-term impact on anonymity network perceptions.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="assets/reports/Operation_Pacifier___Forensics__Law__and_Anonymity_Networks.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Operation%20Pacifier%20%E2%80%93%20Forensics%2C%20Law%2C%20and%20Anonymity%20Networks.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <!-- GRC -->
     <div class="card">
       <span class="card-category grc">GRC</span>
@@ -503,60 +502,60 @@
       <p>Full information security policy authored for Desjardins Insurance, grounded in ISO/IEC 27001 and Canadian privacy law (PIPEDA, Law 25). Defines board-level accountability, CISO responsibilities, and high-level controls across 13 security domains.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="assets/reports/DesJardins_Insurance_Information_Security_Policy.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/DesJardins%20Insurance%20Information%20Security%20Policy.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <div class="card">
       <span class="card-category grc">GRC</span>
       <h3>Information Security Risk Assessment — Financial Info Quest</h3>
       <p>Structured risk assessment for a FinTech startup, identifying five major risks including exposed RDP, insecure custom payment processing, vulnerable web application, weak physical security, and offshore vendor risk — with likelihood/impact ratings and mitigating controls for each.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="assets/reports/Information_Security_Risk_Assessment_-_Financial_Info_Quest.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Information%20Security%20Risk%20Assessment%20-%20Financial%20Info%20Quest.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <div class="card">
       <span class="card-category grc">GRC</span>
       <h3>NIST CSF 2.0 — Incident Response Improvement Plan</h3>
       <p>Three targeted IR recommendations for a financial firm, aligned to NIST CSF 2.0 Respond function. Covers vendor contact matrix design (RS.CO-04), SIEM-based log centralization (RS.AN-01), and formal post-incident review processes (RS.IM-01/02).</p>
       <div class="card-meta">
         <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="assets/reports/NIST_CSF_2_0_-_Incident_Response_Improvement_Plan.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/NIST%20CSF%202.0%20-%20Incident%20Response%20Improvement%20Plan.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <div class="card">
       <span class="card-category grc">GRC</span>
       <h3>PCI DSS v4.0.1 — Patching, Auth & Logging Controls</h3>
       <p>Focused analysis of PCI DSS v4.0.1 key requirements: 30-day critical patch SLAs, 12-character password minimums, mandatory audit-log fields, and 12-month retention requirements (Req. 6.3.3, 8.3.6, 8.6.3, 10.2.2, 10.5.1). Ties each to cardholder data protection outcomes.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="assets/reports/PCI_DSS_v_4_0_1_-_Patching__Authentication__and_Logging_Controls.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/PCI%20DSS%20v.4.0.1%20-%20Patching%2C%20Authentication%2C%20and%20Logging%20Controls.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <div class="card">
       <span class="card-category grc">GRC</span>
       <h3>GDPR Article 33 — Breach Notification & Remediation</h3>
       <p>Acting as DPO, drafted an Article 33 supervisory authority notification for a mis-delivery incident affecting ~100 customers. Covers breach description, affected data categories, likely consequences (phishing, impersonation), and both immediate and long-term DLP controls.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="assets/reports/GDPR_Breach_Notification___Remediation.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/GDPR%20Breach%20Notification%20%26%20Remediation.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <div class="card">
       <span class="card-category grc">GRC</span>
       <h3>CISO Responsibilities & Reporting Structure</h3>
       <p>Analysis of the five core CISO responsibility areas and how reporting lines (CEO vs CIO) affect independence and risk escalation. Connects technical security operations to board-level governance and strategic decision-making.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="assets/reports/CISO_Responsibilities___Reporting_Structure.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/CISO%20Responsibilities%20%26%20Reporting%20Structure.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <!-- IR -->
     <div class="card">
       <span class="card-category ir">Incident Response</span>
@@ -564,20 +563,20 @@
       <p>Detailed incident analysis worksheet reconstructing the DarkSide attack timeline: stolen VPN credentials, ransomware deployment, pipeline shutdown, ransom payment, and recovery. Quantifies operational and economic impact and draws lessons on MFA, IT/OT segmentation, and BCP.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="assets/reports/Colonial_Pipeline_Ransomeware_Case_Study.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Colonial%20Pipeline%20Ransomeware%20Case%20Study.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <div class="card">
       <span class="card-category ir">Incident Response</span>
       <h3>Snowflake Cloud Data Breach Analysis</h3>
       <p>Analysis of the 2024 UNC5537/ShinyHunters credential-based attack on 165+ Snowflake customers. Examines how absent MFA and no credential rotation allowed mass exfiltration, with multi-angle coverage of technical failures, financial impact, and regulatory implications.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="assets/reports/Snowflake_Cloud_Data-Breach_Analysis.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Snowflake%20Cloud%20Data-Breach%20Analysis.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <!-- CPS -->
     <div class="card">
       <span class="card-category cps">Cyber-Physical</span>
@@ -585,10 +584,10 @@
       <p>Two-part tabletop exercise for a fictional Tier-1 automotive supplier. Part 1 designs the JIT/FOTA architecture and "Phantom Patch" scenario (signing key theft, $10M ransom, 2M vehicles at risk). Part 2 executes role-based responses for CEO, CIO, Legal, Operations, and Communications teams.</p>
       <div class="card-meta">
         <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="assets/reports/Automotive_Ransomware_Tabletop_-_Apex_AutoSystems__JIT___Secure_OTA___1_.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Automotive%20Ransomware%20Tabletop%20-%20Apex%20AutoSystems%20%28JIT%20%26%20Secure%20OTA%29%20%281%29.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
     <!-- Lab / IoT -->
     <div class="card">
       <span class="card-category lab">Labs & IoT</span>
@@ -596,13 +595,13 @@
       <p>Two-part study: Part A compares password, MFA (FIDO2/WebAuthn), and biometrics for a cloud admin console, analyzing vulnerabilities and a FIDO2 account-recovery attack scenario. Part B re-designs "mother's maiden name" authentication with cryptographic push-notification approval.</p>
       <div class="card-meta">
         <span class="card-course">IoT-CPS Security · McGill</span>
-        <a class="card-link" href="assets/reports/ASSIGNMENT1-FINAL_SUBMISSION.pdf">View ↗</a>
+        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/ASSIGNMENT1-FINAL%20SUBMISSION.pdf" target="_blank">View ↗</a>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="section-label">Background</div>
@@ -645,7 +644,7 @@
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <span class="footer-text">© 2026 Ayman Al Labade · McGill University</span>
   <div class="footer-links">
@@ -653,6 +652,6 @@
     <a href="mailto:ayman.allabade@mail.mcgill.ca">Email</a>
   </div>
 </footer>
-
+ 
 </body>
 </html>

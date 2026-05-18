@@ -24,11 +24,11 @@ I also work as a Security Screening Officer in a high-security airport environme
 | Project | Description | File |
 |---|---|---|
 | **Desjardins Insurance — ISO 27001 Information Security Policy** | Full information security policy based on ISO/IEC 27001 and Canadian privacy law (PIPEDA, Law 25). Defines accountability from Board to individual employees and sets high-level controls across 13 security domains. | [Policy](<assets/reports/DesJardins Insurance Information Security Policy.pdf>) |
-| **Information Security Risk Assessment — Financial Info Quest** | Structured risk assessment of a FinTech startup. Five major risks documented with threat sources, likelihood, impact, and recommended controls (RDP exposure, custom payment processing, vulnerable web app, physical security, offshore vendor). | [Report](<assets/reports/Information Security Risk Assessment - Financial Info Quest.pdf>) |
-| **NIST CSF 2.0 — Incident Response Improvement Plan** | Three targeted recommendations to strengthen a financial firm's IR capability: vendor contact matrix (RS.CO-04), SIEM log centralization (RS.AN-01), and formal post-incident review (RS.IM-01/02). | [Report](<assets/reports/NIST CSF 2.0 - Incident Response Improvement Plan.pdf>) |
-| **PCI DSS v4.0.1 — Patching, Auth & Logging Controls** | Analysis of key PCI DSS v4.0.1 requirements: 30-day critical patch SLAs, 12-character password policy, mandatory audit-log fields, and 12-month retention (Req. 6.3.3, 8.3.6, 8.6.3, 10.2.2, 10.5.1). | [Report](<assets/reports/PCI DSS v.4.0.1 - Patching, Authentication, and Logging Controls.pdf>) |
-| **GDPR Article 33 — Breach Notification & Remediation** | Acting as DPO, drafted a supervisory authority notification for a customer data mis-delivery incident (~100 affected). Covers breach scope, likely consequences (phishing, impersonation), and DLP controls to prevent recurrence. | [Report](<assets/reports/GDPR Breach Notification & Remediation.pdf>) |
-| **CISO Responsibilities & Reporting Structure** | Analysis of the five core CISO responsibility areas and how CEO vs CIO reporting lines affect independence, risk escalation, and board-level influence. | [Report](<assets/reports/CISO Responsibilities & Reporting Structure.pdf>) |
+| **Information Security Risk Assessment — Financial Info Quest** | Structured risk assessment of a FinTech startup. Five major risks documented with threat sources, likelihood, impact, and recommended controls. | [Report](<assets/reports/Information Security Risk Assessment - Financial Info Quest.pdf>) |
+| **NIST CSF 2.0 — Incident Response Improvement Plan** | Three targeted recommendations to strengthen a financial firm's IR capability: vendor contact matrix, SIEM log centralization, and formal post-incident review. | [Report](<assets/reports/NIST CSF 2.0 - Incident Response Improvement Plan.pdf>) |
+| **PCI DSS v4.0.1 — Patching, Auth & Logging Controls** | Analysis of key PCI DSS v4.0.1 requirements for patching, authentication, audit logging, and retention. | [Report](<assets/reports/PCI DSS v.4.0.1 - Patching, Authentication, and Logging Controls.pdf>) |
+| **GDPR Article 33 — Breach Notification & Remediation** | Drafted supervisory authority notification for a customer data mis-delivery incident, including impact analysis and remediation controls. | [Report](<assets/reports/GDPR Breach Notification & Remediation.pdf>) |
+| **CISO Responsibilities & Reporting Structure** | Analysis of the five core CISO responsibility areas and how reporting lines affect independence and escalation. | [Report](<assets/reports/CISO Responsibilities & Reporting Structure.pdf>) |
 
 ---
 
@@ -36,8 +36,8 @@ I also work as a Security Screening Officer in a high-security airport environme
 
 | Project | Description | File |
 |---|---|---|
-| **Colonial Pipeline Ransomware Case Study (2021)** | Detailed incident worksheet reconstructing the DarkSide attack: stolen VPN credentials, ransomware deployment, 6-day pipeline shutdown, $4.4M ransom payment, and recovery. Draws lessons on MFA, IT/OT segmentation, and BCP for critical infrastructure. | [Report](<assets/reports/Colonial Pipeline Ransomeware Case Study.pdf>) |
-| **Snowflake Cloud Data Breach Analysis (2024)** | Analysis of UNC5537/ShinyHunters attacking 165+ Snowflake customers via stolen credentials and absent MFA. Multi-angle coverage: technical vulnerabilities, financial impact, regulatory implications, and lessons on cloud security hygiene. | [Report](<assets/reports/Snowflake Cloud Data-Breach Analysis.pdf>) |
+| **Colonial Pipeline Ransomware Case Study (2021)** | Detailed incident worksheet reconstructing the DarkSide attack and the resulting operational and security lessons. | [Report](<assets/reports/Colonial Pipeline Ransomeware Case Study.pdf>) |
+| **Snowflake Cloud Data Breach Analysis (2024)** | Analysis of stolen-credential attacks against Snowflake customers, absent MFA, and the resulting security and regulatory implications. | [Report](<assets/reports/Snowflake Cloud Data-Breach Analysis.pdf>) |
 
 ---
 
@@ -45,7 +45,7 @@ I also work as a Security Screening Officer in a high-security airport environme
 
 | Project | Description | Files |
 |---|---|---|
-| **Automotive Ransomware Tabletop — Apex AutoSystems** | Two-part tabletop for a fictional Tier-1 automotive supplier. Part 1 designs the JIT manufacturing and FOTA firmware pipeline architecture. Part 2 simulates the "Phantom Patch" incident — signing key theft, $10M ransom, 2M vehicles at risk — with role-based responses for CEO, CIO, Legal, Operations, and Communications. | [Part 1](<assets/reports/Automotive Ransomware Tabletop - Apex AutoSystems (JIT & Secure OTA) (1).pdf>) · [Part 2](<assets/reports/Automotive Ransomware Tabletop - Apex AutoSystems (JIT & Secure OTA) (2).pdf>) |
+| **Automotive Ransomware Tabletop — Apex AutoSystems** | Two-part tabletop for a fictional Tier-1 automotive supplier focused on JIT manufacturing, secure OTA, and executive incident response. | [Part 1](<assets/reports/Automotive Ransomware Tabletop - Apex AutoSystems (JIT & Secure OTA) (1).pdf>) · [Part 2](<assets/reports/Automotive Ransomware Tabletop - Apex AutoSystems (JIT & Secure OTA) (2).pdf>) |
 
 ---
 
@@ -53,8 +53,8 @@ I also work as a Security Screening Officer in a high-security airport environme
 
 | Project | Description | File |
 |---|---|---|
-| **Authentication Factors for Cloud Infrastructure** | Comparative analysis of passwords, FIDO2 hardware keys, and biometrics for a cloud admin console. Analyzes a concrete FIDO2 account-recovery attack vector and proposes short/long-term mitigations. Part B re-designs "mother's maiden name" auth with cryptographic push-notification approval. | [Report](<assets/reports/ASSIGNMENT1-FINAL SUBMISSION.pdf>) |
-| **Access Control & Defense Methods for IoT/CPS** | Analysis of authentication patterns across IoT layers, ABAC and MQTT security, Mirai botnet case study, and defense-in-depth methods. | [Report](<assets/reports/IoT-CPS Assignment 1- FINALLL.pdf>) |
+| **Access Control and Defense Methods for IoT and Cyber-Physical Systems** | Submitted coursework analyzing authentication patterns, MQTT and virtual object security, ABAC, Mirai botnet lessons, and defense-in-depth for IoT/CPS environments. | [Submitted Coursework](<assets/reports/Access-Control-and-Defense-Methods-for-IoT-and-Cyber-Physical-Systems.pdf>) |
+| **IoT-CPS Authentication Framework and Security Architecture Notes** | Supporting framework notes covering authentication layers, trust models, virtual objects, access control, and cloud/edge security architecture for IoT/CPS. | [Framework Notes](<assets/reports/IoT-CPS-Authentication-Framework-and-Security-Architecture-Notes-2.pdf>) |
 
 ---
 

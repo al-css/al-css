@@ -13,439 +13,90 @@
     --accent: #00e5ff;
     --accent2: #ff4d6d;
     --accent3: #39ff8f;
+    --accent4: #fb923c;
     --text: #e2e8f0;
     --muted: #7a879c;
     --mono: 'Space Mono', monospace;
     --sans: 'Satoshi', sans-serif;
     --display: 'Cabinet Grotesk', sans-serif;
   }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    line-height: 1.65;
-    overflow-x: hidden;
-  }
-
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.65; overflow-x: hidden; }
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
     background-size: 48px 48px;
     pointer-events: none;
     z-index: 0;
   }
-
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2.5rem;
-    background: rgba(10,12,16,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem; background: rgba(10,12,16,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
   }
-
-  .nav-logo {
-    font-family: var(--display);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 8rem 2.5rem 4rem;
-    z-index: 1;
-  }
-
-  .hero-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-tag {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .hero-tag::before {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  .hero h1 {
-    font-family: var(--display);
-    font-size: clamp(3.2rem, 8vw, 7.4rem);
-    font-weight: 800;
-    line-height: 0.92;
-    letter-spacing: -0.04em;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero h1 .name-first { color: var(--text); }
-  .hero h1 .name-last {
-    color: transparent;
-    -webkit-text-stroke: 1px var(--accent);
-  }
-
-  .hero-subtitle {
-    font-family: var(--sans);
-    font-size: 0.95rem;
-    color: var(--muted);
-    margin-top: 1.5rem;
-    max-width: 620px;
-    line-height: 1.9;
-  }
-
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 2.5rem;
-  }
-
-  .badge {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.75rem;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    background: rgba(255,255,255,0.02);
-  }
-
+  .nav-logo { font-family: var(--display); font-size: 0.85rem; font-weight: 700; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a, .footer-links a { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .footer-links a:hover { color: var(--accent); }
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 8rem 2.5rem 4rem; z-index: 1; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .hero-tag, .section-label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-tag { margin-bottom: 1.5rem; }
+  .hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--accent); }
+  .hero h1 { font-family: var(--display); font-size: clamp(3.2rem, 8vw, 7.4rem); font-weight: 800; line-height: 0.92; letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+  .hero h1 .name-last { color: transparent; -webkit-text-stroke: 1px var(--accent); }
+  .hero-subtitle { font-size: 0.95rem; color: var(--muted); margin-top: 1.5rem; max-width: 620px; line-height: 1.9; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.5rem; }
+  .badge { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.75rem; border: 1px solid var(--border); color: var(--muted); background: rgba(255,255,255,0.02); }
   .badge.hi { border-color: var(--accent); color: var(--accent); }
-
-  .hero-scan {
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 280px;
-    height: 280px;
-    border: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-    opacity: 0.35;
-  }
-
+  .hero-scan { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 280px; height: 280px; border: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); opacity: 0.35; }
   .hero-scan div { background: var(--surface); }
-
-  section {
-    position: relative;
-    z-index: 1;
-    padding: 6rem 2.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--accent);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  h2 {
-    font-family: var(--display);
-    font-size: clamp(1.9rem, 4vw, 3rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 3rem;
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .card {
-    background: var(--surface);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: background 0.2s, transform 0.2s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 2px;
-    height: 0;
-    background: var(--accent);
-    transition: height 0.3s ease;
-  }
-
+  section { position: relative; z-index: 1; padding: 6rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .section-label { margin-bottom: 0.75rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  h2 { font-family: var(--display); font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 3rem; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .card { background: var(--surface); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s, transform 0.2s ease; position: relative; overflow: hidden; }
+  .card::after { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--accent); transition: height 0.3s ease; }
   .card:hover::after { height: 100%; }
-  .card:hover {
-    background: #131722;
-    transform: translateY(-2px);
-  }
-
-  .card-category {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    width: fit-content;
-  }
-
-  .card-category.ti  { border-color: var(--accent);  color: var(--accent); }
-  .card-category.grc { border-color: #a78bfa; color: #a78bfa; }
-  .card-category.ir  { border-color: var(--accent2); color: var(--accent2); }
-  .card-category.cps { border-color: var(--accent3); color: var(--accent3); }
-  .card-category.lab { border-color: #fb923c; color: #fb923c; }
-
-  .card h3 {
-    font-family: var(--display);
-    font-size: 1.12rem;
-    font-weight: 700;
-    line-height: 1.25;
-    color: var(--text);
-    letter-spacing: -0.02em;
-  }
-
-  .card p {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.75;
-    flex: 1;
-  }
-
-  .card-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-    gap: 1rem;
-  }
-
-  .card-course {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-
-  .card-link {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--accent);
-    text-decoration: none;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: gap 0.2s, color 0.2s;
-  }
-
+  .card:hover { background: #131722; transform: translateY(-2px); }
+  .card-category { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.2rem 0.5rem; border: 1px solid var(--border); color: var(--muted); width: fit-content; }
+  .ti { border-color: var(--accent); color: var(--accent); }
+  .grc { border-color: #a78bfa; color: #a78bfa; }
+  .ir { border-color: var(--accent2); color: var(--accent2); }
+  .cps { border-color: var(--accent3); color: var(--accent3); }
+  .lab { border-color: var(--accent4); color: var(--accent4); }
+  .card h3 { font-family: var(--display); font-size: 1.12rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; }
+  .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; flex: 1; }
+  .card-meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .card-course, .footer-text { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; }
+  .card-link { font-family: var(--mono); font-size: 0.65rem; color: var(--accent); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items: center; gap: 0.4rem; transition: gap 0.2s, color 0.2s; }
   .card-link:hover { gap: 0.75rem; color: #5beaff; }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    font-size: 0.96rem;
-    color: var(--muted);
-    line-height: 1.85;
-    margin-bottom: 1.25rem;
-  }
-
-  .about-text p strong { color: var(--text); }
-
-  .tools-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .tool-item {
-    background: var(--surface);
-    padding: 0.85rem 1rem;
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .tool-item::before {
-    content: '›';
-    color: var(--accent);
-    font-size: 0.85rem;
-  }
-
-  .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    margin-top: 4rem;
-  }
-
-  .stat {
-    background: var(--surface);
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: var(--display);
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    display: block;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.03em;
-  }
-
-  .stat-label {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--border);
-    padding: 3rem 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 100%;
-  }
-
-  .footer-text {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .footer-links a {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--accent); }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-inner > * {
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
-  .hero-inner > *:nth-child(2) { animation-delay: 0.2s; }
-  .hero-inner > *:nth-child(3) { animation-delay: 0.3s; }
-  .hero-inner > *:nth-child(4) { animation-delay: 0.4s; }
-  .hero-inner > *:nth-child(5) { animation-delay: 0.5s; }
-
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { font-size: 0.96rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.25rem; }
+  .about-text strong { color: var(--text); }
+  .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .tool-item { background: var(--surface); padding: 0.85rem 1rem; font-family: var(--mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem; }
+  .tool-item::before { content: '›'; color: var(--accent); }
+  .stats-wrap { position: relative; z-index: 1; padding: 0 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 4rem; }
+  .stat { background: var(--surface); padding: 2rem; text-align: center; }
+  .stat-num { font-family: var(--display); font-size: 2.5rem; font-weight: 800; color: var(--accent); display: block; line-height: 1; margin-bottom: 0.5rem; }
+  .stat-label { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
+  footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+  .footer-links { display: flex; gap: 2rem; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-inner > * { animation: fadeUp 0.6s ease both; }
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
     .hero { padding: 7rem 1.25rem 3rem; }
     section { padding: 4rem 1.25rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-wrap { padding: 0 1.25rem; }
     .stats-bar { grid-template-columns: 1fr 1fr; }
     .hero-scan { display: none; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -453,28 +104,20 @@
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-logo">AAL // Portfolio</div>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#labs">Blue Team Labs</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="https://github.com/al-css/al-css" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
   </ul>
 </nav>
-
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Cybersecurity Student · McGill University</div>
-    <h1>
-      <span class="name-first">Ayman</span><br>
-      <span class="name-last">Al Labade</span>
-    </h1>
-    <p class="hero-subtitle">
-      SOC & blue-team focused. I analyze real incidents, design security policies,
-      and work through practical detection and response workflows.
-      Security Screening Officer · McGill CCCS Program.
-    </p>
+    <h1><span>Ayman</span><br><span class="name-last">Al Labade</span></h1>
+    <p class="hero-subtitle">SOC and blue-team focused. Academic work across threat intelligence, incident response, GRC, and IoT/CPS security, supported by practical blue-team lab development and operational discipline from high-security screening work.</p>
     <div class="hero-badges">
       <span class="badge hi">SOC / Blue Team</span>
       <span class="badge hi">Threat Intelligence</span>
@@ -484,16 +127,12 @@
       <span class="badge">MITRE ATT&CK</span>
       <span class="badge">NIST CSF 2.0</span>
       <span class="badge">PCI DSS</span>
-      <span class="badge">GDPR</span>
       <span class="badge">ISO 27001</span>
     </div>
   </div>
-  <div class="hero-scan">
-    <div></div><div></div><div></div><div></div>
-  </div>
+  <div class="hero-scan"><div></div><div></div><div></div><div></div></div>
 </div>
-
-<div style="position:relative;z-index:1;padding:0 2.5rem;max-width:1100px;margin:0 auto;">
+<div class="stats-wrap">
   <div class="stats-bar">
     <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Projects & Reports</span></div>
     <div class="stat"><span class="stat-num">5</span><span class="stat-label">Domains Covered</span></div>
@@ -501,178 +140,50 @@
     <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Frameworks Applied</span></div>
   </div>
 </div>
-
 <section id="projects">
   <div class="section-label">Academic Work</div>
   <h2>Projects & Reports</h2>
-
   <div class="projects-grid">
-
-    <div class="card">
-      <span class="card-category ti">Threat Intelligence</span>
-      <h3>APT Threat Intelligence & MITRE ATT&CK Mapping</h3>
-      <p>Comparative analysis of APT1, APT38, and APT41 using the Cyber Kill Chain and MITRE ATT&CK framework. Mapped TTPs across all kill chain phases and produced ATT&CK Navigator visualizations to guide threat hunting and IR recommendations.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 454 · Intrusion Testing</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/apt-threat-intelligence-mitre-attack-report%20%28FULL%29.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category ti">Threat Intelligence</span>
-      <h3>Operation Pacifier — Forensics, Law & Anonymity Networks</h3>
-      <p>Analysis of the FBI's Playpen takedown and the Network Investigative Technique (NIT) deployment. Covers the Firefox/Tor vulnerability exploited, Rule 41 jurisdiction issues, evidence admissibility under the "good faith" exception, and the long-term impact on anonymity network perceptions.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Operation%20Pacifier%20%E2%80%93%20Forensics%2C%20Law%2C%20and%20Anonymity%20Networks.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category grc">GRC</span>
-      <h3>Desjardins Insurance — ISO 27001 Information Security Policy</h3>
-      <p>Full information security policy authored for Desjardins Insurance, grounded in ISO/IEC 27001 and Canadian privacy law (PIPEDA, Law 25). Defines board-level accountability, CISO responsibilities, and high-level controls across 13 security domains.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/DesJardins%20Insurance%20Information%20Security%20Policy.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category grc">GRC</span>
-      <h3>Information Security Risk Assessment — Financial Info Quest</h3>
-      <p>Structured risk assessment for a FinTech startup, identifying five major risks including exposed RDP, insecure custom payment processing, vulnerable web application, weak physical security, and offshore vendor risk — with likelihood/impact ratings and mitigating controls for each.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Information%20Security%20Risk%20Assessment%20-%20Financial%20Info%20Quest.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category grc">GRC</span>
-      <h3>NIST CSF 2.0 — Incident Response Improvement Plan</h3>
-      <p>Three targeted IR recommendations for a financial firm, aligned to NIST CSF 2.0 Respond function. Covers vendor contact matrix design (RS.CO-04), SIEM-based log centralization (RS.AN-01), and formal post-incident review processes (RS.IM-01/02).</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/NIST%20CSF%202.0%20-%20Incident%20Response%20Improvement%20Plan.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category grc">GRC</span>
-      <h3>PCI DSS v4.0.1 — Patching, Auth & Logging Controls</h3>
-      <p>Focused analysis of PCI DSS v4.0.1 key requirements: 30-day critical patch SLAs, 12-character password minimums, mandatory audit-log fields, and 12-month retention requirements. Ties each to cardholder data protection outcomes.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/PCI%20DSS%20v.4.0.1%20-%20Patching%2C%20Authentication%2C%20and%20Logging%20Controls.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category grc">GRC</span>
-      <h3>GDPR Article 33 — Breach Notification & Remediation</h3>
-      <p>Acting as DPO, drafted an Article 33 supervisory authority notification for a mis-delivery incident affecting ~100 customers. Covers breach description, affected data categories, likely consequences, and both immediate and long-term DLP controls.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/GDPR%20Breach%20Notification%20%26%20Remediation.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category grc">GRC</span>
-      <h3>CISO Responsibilities & Reporting Structure</h3>
-      <p>Analysis of the five core CISO responsibility areas and how reporting lines affect independence and risk escalation. Connects technical security operations to board-level governance and strategic decision-making.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 453 · Security Risk Management</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/CISO%20Responsibilities%20%26%20Reporting%20Structure.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category ir">Incident Response</span>
-      <h3>Colonial Pipeline Ransomware Case Study</h3>
-      <p>Detailed incident analysis worksheet reconstructing the DarkSide attack timeline: stolen VPN credentials, ransomware deployment, pipeline shutdown, ransom payment, and recovery. Quantifies operational and economic impact and draws lessons on MFA, IT/OT segmentation, and BCP.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Colonial%20Pipeline%20Ransomeware%20Case%20Study.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category ir">Incident Response</span>
-      <h3>Snowflake Cloud Data Breach Analysis</h3>
-      <p>Analysis of the 2024 UNC5537/ShinyHunters credential-based attack on 165+ Snowflake customers. Examines how absent MFA and no credential rotation allowed mass exfiltration, with multi-angle coverage of technical failures, financial impact, and regulatory implications.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Snowflake%20Cloud%20Data-Breach%20Analysis.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category cps">Cyber-Physical</span>
-      <h3>Automotive Ransomware Tabletop — Apex AutoSystems</h3>
-      <p>Two-part tabletop exercise for a fictional Tier-1 automotive supplier. Part 1 designs the JIT/FOTA architecture and "Phantom Patch" scenario. Part 2 executes role-based responses for CEO, CIO, Legal, Operations, and Communications teams.</p>
-      <div class="card-meta">
-        <span class="card-course">CCCS 454 · Security Incident Response</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Automotive%20Ransomware%20Tabletop%20-%20Apex%20AutoSystems%20%28JIT%20%26%20Secure%20OTA%29%20%281%29.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <span class="card-category lab">IoT / CPS</span>
-      <h3>Access Control and Defense Methods for IoT and Cyber-Physical Systems</h3>
-      <p>Submitted coursework examining authentication patterns across IoT/CPS layers, MQTT and virtual object security, attribute-based access control, Mirai botnet lessons, and defense-in-depth strategies for resilient connected systems.</p>
-      <div class="card-meta">
-        <span class="card-course">IoT-CPS Security · McGill</span>
-        <a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Access-Control-and-Defense-Methods-for-IoT-and-Cyber-Physical-Systems.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
-      </div>
-    </div>
-
+    <div class="card"><span class="card-category ti">Threat Intelligence</span><h3>APT Threat Intelligence & MITRE ATT&CK Mapping</h3><p>Comparative analysis of APT1, APT38, and APT41 using the Cyber Kill Chain and MITRE ATT&CK framework. Includes mapped TTPs and defender-oriented recommendations.</p><div class="card-meta"><span class="card-course">CCCS 454</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/apt-threat-intelligence-mitre-attack-report%20%28FULL%29.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
+    <div class="card"><span class="card-category ti">Threat Intelligence</span><h3>Operation Pacifier — Forensics, Law & Anonymity Networks</h3><p>Analysis of the FBI Playpen takedown, NIT deployment, legal issues, and the long-term impact on trust in anonymity networks.</p><div class="card-meta"><span class="card-course">CCCS 454</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Operation%20Pacifier%20%E2%80%93%20Forensics%2C%20Law%2C%20and%20Anonymity%20Networks.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
+    <div class="card"><span class="card-category grc">GRC</span><h3>Desjardins Insurance — ISO 27001 Information Security Policy</h3><p>Information security policy grounded in ISO/IEC 27001 and Canadian privacy requirements, with governance responsibilities and high-level control coverage.</p><div class="card-meta"><span class="card-course">CCCS 453</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/DesJardins%20Insurance%20Information%20Security%20Policy.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
+    <div class="card"><span class="card-category grc">GRC</span><h3>Information Security Risk Assessment — Financial Info Quest</h3><p>Structured FinTech risk assessment covering exposed services, weak application security, physical security issues, and third-party vendor exposure.</p><div class="card-meta"><span class="card-course">CCCS 453</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Information%20Security%20Risk%20Assessment%20-%20Financial%20Info%20Quest.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
+    <div class="card"><span class="card-category ir">Incident Response</span><h3>Colonial Pipeline Ransomware Case Study</h3><p>Incident reconstruction of the DarkSide ransomware attack with lessons on credentials, segmentation, business continuity, and recovery.</p><div class="card-meta"><span class="card-course">CCCS 454</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Colonial%20Pipeline%20Ransomeware%20Case%20Study.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
+    <div class="card"><span class="card-category ir">Incident Response</span><h3>Snowflake Cloud Data Breach Analysis</h3><p>Analysis of stolen-credential attacks against Snowflake customers, focusing on missing MFA, credential abuse, and security implications.</p><div class="card-meta"><span class="card-course">CCCS 454</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Snowflake%20Cloud%20Data-Breach%20Analysis.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
+    <div class="card"><span class="card-category cps">Cyber-Physical</span><h3>Automotive Ransomware Tabletop — Apex AutoSystems</h3><p>Two-part ransomware tabletop for a fictional automotive supplier focused on JIT manufacturing, secure OTA infrastructure, and executive response.</p><div class="card-meta"><span class="card-course">CCCS 454</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Automotive%20Ransomware%20Tabletop%20-%20Apex%20AutoSystems%20%28JIT%20%26%20Secure%20OTA%29%20%281%29.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
+    <div class="card"><span class="card-category lab">IoT / CPS</span><h3>Access Control and Defense Methods for IoT and Cyber-Physical Systems</h3><p>Submitted coursework examining authentication patterns, MQTT and virtual object security, ABAC, Mirai lessons, and defense-in-depth for IoT/CPS.</p><div class="card-meta"><span class="card-course">IoT-CPS Security</span><a class="card-link" href="https://github.com/al-css/al-css/blob/main/assets/reports/Access-Control-and-Defense-Methods-for-IoT-and-Cyber-Physical-Systems.pdf" target="_blank" rel="noopener noreferrer">View ↗</a></div></div>
   </div>
 </section>
-
+<section id="labs">
+  <div class="section-label">Practical Work</div>
+  <h2>Blue Team Labs</h2>
+  <div class="projects-grid">
+    <div class="card"><span class="card-category lab">Blue Team</span><h3>Home SOC / SIEM Lab</h3><p>Planned lab to collect and analyze Windows and Linux logs with dashboards, alerting, and triage workflow notes.</p><div class="card-meta"><span class="card-course">In progress</span><span class="card-link">Planned</span></div></div>
+    <div class="card"><span class="card-category lab">Detection</span><h3>Detection Rule Pack</h3><p>Planned detection content for brute force activity, suspicious PowerShell, and abnormal authentication patterns.</p><div class="card-meta"><span class="card-course">Planned</span><span class="card-link">Planned</span></div></div>
+    <div class="card"><span class="card-category lab">Triage</span><h3>Incident Triage Write-Up</h3><p>Planned mock investigation showing alert review, evidence handling, timeline building, and response decisions.</p><div class="card-meta"><span class="card-course">Planned</span><span class="card-link">Planned</span></div></div>
+    <div class="card"><span class="card-category lab">Email Security</span><h3>Phishing Email Analysis</h3><p>Planned phishing triage page covering sender analysis, header review, suspicious links, and analyst verdict.</p><div class="card-meta"><span class="card-course">Planned</span><span class="card-link">Planned</span></div></div>
+    <div class="card"><span class="card-category lab">Hunting</span><h3>Threat Hunting Mini-Report</h3><p>Planned hypothesis-driven hunt documenting signals checked, findings observed, and suggested next steps.</p><div class="card-meta"><span class="card-course">Planned</span><span class="card-link">Planned</span></div></div>
+  </div>
+</section>
 <section id="about">
   <div class="section-label">Background</div>
   <h2>About Me</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>
-        I'm a cybersecurity student at <strong>McGill University's School of Continuing Studies</strong>,
-        focused on Security Operations Center (SOC) work and blue-team defense. My coursework
-        spans threat intelligence, incident response, governance and risk, and hands-on lab work.
-      </p>
-      <p>
-        I also work as a <strong>Security Screening Officer</strong> in a high-security airport
-        environment, which has given me strong discipline around procedures, documentation,
-        escalation paths, and operational accountability — skills that translate directly into
-        security operations work.
-      </p>
-      <p>
-        My goal is to grow as a blue-team security professional with a focus on
-        <strong>SOC operations, threat monitoring, incident handling, and defensive security</strong>
-        — connecting technical analysis to real-world detection and response outcomes.
-      </p>
+      <p>Cybersecurity student at <strong>McGill University School of Continuing Studies</strong>, focused on Security Operations Center work and blue-team defense.</p>
+      <p>Coursework spans threat intelligence, incident response, governance and risk, and practical security analysis.</p>
+      <p>Also working as a <strong>Security Screening Officer</strong> in a high-security airport environment, reinforcing procedural discipline, escalation, and documentation skills relevant to SOC operations.</p>
     </div>
     <div>
       <p style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem;">Tools & Platforms</p>
       <div class="tools-grid">
-        <div class="tool-item">Nmap</div>
-        <div class="tool-item">Wireshark</div>
-        <div class="tool-item">ELK Stack</div>
-        <div class="tool-item">Kali Linux</div>
-        <div class="tool-item">Metasploit</div>
-        <div class="tool-item">MITRE ATT&CK</div>
-        <div class="tool-item">NIST CSF 2.0</div>
-        <div class="tool-item">ISO 27001</div>
-        <div class="tool-item">Hyper-V/VMware</div>
-        <div class="tool-item">PCI DSS</div>
-        <div class="tool-item">GDPR / PIPEDA</div>
-        <div class="tool-item">SIEM / SOAR</div>
+        <div class="tool-item">Nmap</div><div class="tool-item">Wireshark</div><div class="tool-item">ELK Stack</div><div class="tool-item">Kali Linux</div>
+        <div class="tool-item">Metasploit</div><div class="tool-item">MITRE ATT&CK</div><div class="tool-item">NIST CSF 2.0</div><div class="tool-item">ISO 27001</div>
+        <div class="tool-item">Hyper-V/VMware</div><div class="tool-item">PCI DSS</div><div class="tool-item">GDPR / PIPEDA</div><div class="tool-item">SIEM / SOAR</div>
       </div>
     </div>
   </div>
 </section>
-
 <footer>
   <span class="footer-text">© 2026 Ayman Al Labade · McGill University</span>
   <div class="footer-links">
@@ -680,6 +191,5 @@
     <a href="mailto:ayman.allabade@mail.mcgill.ca">Email</a>
   </div>
 </footer>
-
 </body>
 </html>

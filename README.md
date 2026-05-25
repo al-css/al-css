@@ -52,7 +52,7 @@ Also working as a Security Screening Officer in a high-security airport environm
 
 | Project | Description | Status |
 |---|---|---|
-| **Home SOC / SIEM Lab** | Planned lab to collect and analyze endpoint and network logs with dashboards, alerting, and triage workflow documentation. | In progress |
+| **Home SOC / SIEM Lab** | Planned lab to collect and analyze endpoint and network logs with dashboards, alerting, and triage workflow documentation. | (https://github.com/al-css/elastic-siem-lab) |
 | **Detection Rule Pack** | Planned set of detections for brute force, suspicious PowerShell, and abnormal authentication patterns. | Planned |
 | **Incident Triage Write-Up** | Planned mock alert investigation showing timeline, evidence review, and containment steps. | Planned |
 | **Phishing Email Analysis** | Planned phishing triage page reviewing headers, links, and payload indicators with analyst verdict. | Planned |
